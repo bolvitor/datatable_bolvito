@@ -17,5 +17,6 @@ $router->post('/API/login', [LoginController::class,'loginAPI']);
 $router->get('/productos/datatable', [ProductoController::class,'datatable']);
 $router->get('/API/productos/buscar', [ProductoController::class,'buscarAPI']);
 
+
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();
