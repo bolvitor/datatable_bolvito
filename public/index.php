@@ -18,8 +18,9 @@ $router->post('/API/login', [LoginController::class,'loginAPI']);
 $router->get('/productos/datatable', [ProductoController::class,'datatable']);
 $router->get('/API/productos/buscar', [ProductoController::class,'buscarAPI']);
 
-$router->get('/', [AppController::class,'index']);
-$router->get('/empleados', [EmpleadoController::class,'index'] );
+// $router->get('/', [AppController::class,'index']);
+// $router->get('/empleados', [EmpleadoController::class,'index'] );
+$router->get('/empleados/datatable', [EmpleadoController::class,'datatable']);
 $router->post('/API/empleados/guardar', [EmpleadoController::class,'guardarAPI'] );
 $router->post('/API/empleados/modificar', [EmpleadoController::class,'modificarAPI'] );
 $router->post('/API/empleados/eliminar', [EmpleadoController::class,'eliminarAPI'] );

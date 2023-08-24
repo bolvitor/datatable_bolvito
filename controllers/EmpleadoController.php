@@ -8,16 +8,8 @@ use MVC\Router;
 
 class EmpleadoController
 {
-    public static function index(Router $router)
-    {
-        $empleados = Empleado::all();
-        // $empleados2 = empleado::all();
-        // var_dump($empleados);
-        // exit;
-        $router->render('empleados/index', [
-            'empleados' => $empleados,
-            // 'empleados2' => $empleados2,
-        ]);
+    public static function datatable(Router $router){
+        $router->render('empleados/datatable', []);
     }
 
     public static function guardarAPI()
@@ -102,15 +94,13 @@ class EmpleadoController
             ]);
         }
     }
-
+    
     public static function buscarAPI()
     {
-        // $puestos = Puesto::all();
         $empleado_nombre = $_GET['empleado_nombre'] ?? '';
         $empleado_dpi = $_GET['empleado_dpi'] ?? '';
         $empleado_edad = $_GET['empleado_edad'] ?? '';
         $empleado_sexo = $_GET['empleado_sexo'] ?? '';
-
 
         $sql = "SELECT * FROM empleados WHERE empleado_situacion = 1 ";
         if ($empleado_nombre != '') {
