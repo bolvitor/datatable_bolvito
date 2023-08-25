@@ -8,9 +8,12 @@ use MVC\Router;
 
 class DetalleController {
     public static function estadistica(Router $router){
+        if(isset($_SESSION['auth_user'])){
         $router->render('productos/estadistica', []);
+    }else{
+        header('Location: /datatable_bolvito/');
     }
-
+    }
     public static function detalleVentasAPI(){
 
         $sql = "SELECT producto_nombre as producto, sum (detalle_cantidad) as cantidad  from detalle_ventas inner join ventas on detalle_venta = venta_id inner join productos on detalle_producto = producto_id where detalle_situacion = 1  group by producto_nombre order by producto_nombre";
@@ -31,7 +34,11 @@ class DetalleController {
 
 
     public static function estadistica2(Router $router){
+        if(isset($_SESSION['auth_user'])){
         $router->render('empleados/estadistica', []);
+    }else{
+        header('Location: /datatable_bolvito/');
+    }
     }
 
     public static function detalleEmpleadosAPI(){
