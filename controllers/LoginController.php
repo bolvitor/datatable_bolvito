@@ -5,15 +5,16 @@ namespace Controllers;
 use Exception;
 use Model\Usuario;
 use MVC\Router;
-
 class LoginController {
     public static function index(Router $router){
         if(!isset($_SESSION['auth_user'])){
             $router->render('login/index', []);
-        }else{
-            header('Location: /datatable_bolvito/menu');
+    
+        } else {
+            header('Location: /datatable_bolvito/empleados/datatable') || header('Location: /datatable_bolvito/menu');
         }
     }
+
     public static function menu(Router $router){
         if(isset($_SESSION['auth_user'])){
             $router->render('menu/index', []);

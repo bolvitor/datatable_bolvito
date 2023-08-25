@@ -9,7 +9,11 @@ use MVC\Router;
 class EmpleadoController
 {
     public static function datatable(Router $router){
+        if(isset($_SESSION['auth_user'])){
         $router->render('empleados/datatable', []);
+    }else{
+        header('Location: /datatable_bolvito/');
+    }
     }
 
     public static function guardarAPI()
@@ -94,6 +98,7 @@ class EmpleadoController
             ]);
         }
     }
+
     
     public static function buscarAPI()
     {
