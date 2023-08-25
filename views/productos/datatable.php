@@ -1,3 +1,4 @@
+
 <h1>Datatable de productos</h1>
 <div class="row justify-content-center">
     <div class="col table-responsive">
