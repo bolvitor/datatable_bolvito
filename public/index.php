@@ -29,5 +29,8 @@ $router->get('/API/empleados/buscar', [EmpleadoController::class,'buscarAPI'] );
 $router->get('/productos/estadistica', [DetalleController::class,'estadistica']);
 $router->get('/API/productos/estadistica', [DetalleController::class,'detalleVentasAPI']);
 
+$router->get('/empleados/estadistica2', [DetalleController::class,'estadistica2']);
+$router->get('/API/empleados/estadistica2', [DetalleController::class,'detalleEmpleadosAPI']);
+
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

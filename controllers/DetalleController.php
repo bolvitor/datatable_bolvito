@@ -29,4 +29,32 @@ class DetalleController {
         }
     }
 
+
+    public static function estadistica2(Router $router){
+        $router->render('empleados/estadistica', []);
+    }
+
+    public static function detalleEmpleadosAPI(){
+
+        $sql = "SELECT e.empleado_nombre AS empleado, COUNT(DISTINCT v.venta_id) AS total_ventas
+        FROM empleados e
+        LEFT JOIN ventas v ON e.empleado_id = v.empleado_id
+        WHERE v.venta_situacion = '1'
+        GROUP BY e.empleado_id, e.empleado_nombre
+        ORDER BY e.empleado_nombre";
+
+        try {
+            
+            $empleados = Detalle::fetchArray($sql);
+    
+            echo json_encode($empleados);
+        } catch (Exception $e) {
+            echo json_encode([
+                'detalle' => $e->getMessage(),
+                'mensaje' => 'Ocurrió un error',
+                'codigo' => 0
+            ]);
+        }
+    }
+
 }
