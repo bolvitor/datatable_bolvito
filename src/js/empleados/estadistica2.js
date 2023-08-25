@@ -7,7 +7,7 @@ const context = canvas.getContext('2d');
 
 
 const chartVentas = new Chart(context, {
-    type : 'bar',
+    type : 'line',
     data : {
         labels : [],
         datasets : [
@@ -30,7 +30,7 @@ const chartVentas = new Chart(context, {
         ]
     },
     options : {
-        indexAxis : 'y'
+        indexAxis : 'x'
     }
 })
 

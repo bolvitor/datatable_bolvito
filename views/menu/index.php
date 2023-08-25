@@ -1,6 +1,24 @@
-<h1>menu principal</h1>
-<a href="/datatable_bolvito/productos/datatable" class="btn btn-link">productos</a>
-<a href="/datatable_bolvito/productos/estadistica" class="btn btn-link">Estadistica</a>
-<a href="/datatable_bolvito/empleados/estadistica2" class="btn btn-link">Estadistica2</a>
-<a href="/datatable_bolvito/empleados/datatable" class="btn btn-link">Clientes</a>
-<a href="/datatable_bolvito/logout" class="btn btn-danger">Cerrar sesión</a>
+
+
+
+    <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
+    <a class="navbar-brand" href="#">MENU</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-dark" href="/datatable_bolvito/productos/datatable">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-dark" href="/datatable_bolvito/productos/estadistica">Estadística</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-dark" href="/datatable_bolvito/empleados/datatable">Empleados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-dark" href="/datatable_bolvito/empleados/estadistica2">Estadística2</a>
+                    </li>
+                  
+                </ul>
+    </div>
+    <a href="/datatable_bolvito/logout" class="btn btn-danger">CERRAR SESIÓN</a>
+</nav>
